@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: "bash"
   args:
-    -c
+    - '-c'
     - |
         curl 'https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml' -o sitemap-us.xml --create-dirs
 
