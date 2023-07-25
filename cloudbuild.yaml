@@ -5,5 +5,6 @@ steps:
     ls
     rm *.xml
     ls
-- name: 'curlimages/curl'
+- name: 'gcr.io/gcp-runtimes/ubuntu_18_0_4'
+  entrypoint: 'curl'
   args: ['https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml','-o','sitemap-us.xml','--create-dirs']
