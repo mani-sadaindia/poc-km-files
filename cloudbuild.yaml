@@ -7,10 +7,11 @@ steps:
         cd konica-minolta--fed/src
         ls
         rm *.xml
-        curl 'https://kmlogs.blob.core.windows.net/sitemap/qa/us/sitemap-us.xml' -o sitemap-us.xml --create-dirs
-        curl 'https://kmlogs.blob.core.windows.net/sitemap/qa/be/sitemap.xml' -o sitemap-be.xml --create-dirs
-        for((i=1; i <=12 ; i++))
-        do
-          curl 'https://kmlogs.blob.core.windows.net/sitemap/qa/us/sitemap-$i.xml' -o sitemap-$i.xml --create-dirs
-        done
+- name: gcr.io/cloud-builders/gsutil
+  args: ['cp', 'gs://bucket-km-test/b.xml', 'konica-minolta--fed/src/b.xml']
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: "bash"
+  args:
+    - '-c'
+    - |
         ls
