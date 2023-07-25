@@ -1,14 +1,10 @@
 steps:
-- name: 'bash'
-  script: |
-        #!/usr/bin/env bash
-        cd konica-minolta--fed/src
-        ls
-        rm *.xml
-        ls
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: "bash"
+  args:
+    - |
         curl https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml -o sitemap-us.xml
-- name: 'ubuntu'
-  script: echo hello
+
 # - name: 'bash'
 #   script: |
     #!/usr/bin/env bash
