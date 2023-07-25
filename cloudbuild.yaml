@@ -8,7 +8,7 @@ steps:
         ls
         rm *.xml
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://bucket-km-test/b.xml', 'konica-minolta--fed/src/b.xml','gs://bucket-km-test/c.xml', 'konica-minolta--fed/src/c.xml']
+  args: ['cp', 'gs://bucket-km-test/b.xml','gs://bucket-km-test/c.xml', 'konica-minolta--fed/src/']
   
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: "bash"
