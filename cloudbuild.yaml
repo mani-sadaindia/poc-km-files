@@ -3,7 +3,7 @@ steps:
   entrypoint: "bash"
   args:
     - |
-        curl https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml -o sitemap-us.xml --create-dirs
+        curl 'https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml' -o sitemap-us.xml --create-dirs
 
 # - name: 'bash'
 #   script: |
