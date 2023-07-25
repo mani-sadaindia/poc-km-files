@@ -9,7 +9,7 @@ steps:
         rm *.xml
         curl 'https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml' -o sitemap-us.xml --create-dirs
         curl 'https://kmlogs.blob.core.windows.net/sitemap/qa/be/sitemap.xml' -o sitemap-be.xml --create-dirs
-        for((i=1; i -le 12 ; i++))
+        for((i=1; i <=12 ; i++))
         do
           curl 'https://kmlogs.blob.core.windows.net/sitemap/qa/us/sitemap-$i.xml' -o sitemap-$i.xml --create-dirs
         done
