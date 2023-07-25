@@ -8,25 +8,13 @@ steps:
         ls
         rm *.xml
         curl 'https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml' -o sitemap-us.xml --create-dirs
-        curl 'https://kmlogs.blob.core.windows.net/sitemap/qa/be/sitemap.xml' -o sitemap-be.xml --create-dirs
+        curl 'https://github.com/mani-sadaindia/poc-xml-host/blob/main/note2.xml' -o sitemap-be.xml --create-dirs
         for((i=1; i <=12 ; i++))
         do
-          curl 'https://kmlogs.blob.core.windows.net/sitemap/qa/us/sitemap-$i.xml' -o sitemap-$i.xml --create-dirs
+          curl 'https://github.com/mani-sadaindia/poc-xml-host/blob/main/note2.xml' -o sitemap-$i.xml --create-dirs
         done
         ls
+        cat sitemap-us.xml
+        cat sitemap-12.xml
+        cat sitemap-1.xml
 
-# - name: 'bash'
-#   script: |
-    # !/usr/bin/env bash
-    # cd konica-minolta--fed/src
-    # ls
-    # rm *.xml
-    # ls
-    # curl https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml -o sitemap-us.xml
-# - name: 'gcr.io/gcp-runtimes/ubuntu_18_0_4'
-#   entrypoint: 'curl'
-#   args: ['https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml','-o','konica-minolta--fed/src/sitemap-us.xml','--create-dirs']
-# - name: 'bash'
-#   script: |
-#     ls
-#     pwd
