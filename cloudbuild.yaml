@@ -5,10 +5,5 @@ steps:
     ls
     rm *.xml
     ls
-    curl https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml -o sitemap-us.xml
-    curl https://github.com/mani-sadaindia/poc-xml-host/blob/main/note2.xml -o sitemap-be.xml
-    for(i=1; i -le 12 ; i++)
-    do
-      curl https://github.com/mani-sadaindia/poc-xml-host/blob/main/notex.xml -o sitemap-$i.xml
-    done
-    ls
+- name: 'curlimages/curl'
+  args: ['https://github.com/mani-sadaindia/poc-xml-host/blob/main/note1.xml','-o','sitemap-us.xml','--create-dirs']
