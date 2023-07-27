@@ -1,19 +1,31 @@
-steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: "bash"
-  args:
-    - '-c'
-    - |
-        cd konica-minolta--fed/src
-        ls
-        rm *.xml
-- name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://bucket-km-test/*.xml', 'konica-minolta--fed/src/']
+# steps:
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   entrypoint: "bash"
+#   args:
+#     - '-c'
+#     - |
+#         cd konica-minolta--fed/src
+#         ls
+#         rm *.xml
+# - name: gcr.io/cloud-builders/gsutil
+#   args: ['cp', 'gs://bucket-km-test/*.xml', 'konica-minolta--fed/src/']
   
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   entrypoint: "bash"
+#   args:
+#     - '-c'
+#     - |
+#         cd konica-minolta--fed/src
+#         ls
+
 - name: 'gcr.io/cloud-builders/gcloud'
+  env:
+  - 'BAR=$test'
   entrypoint: "bash"
   args:
     - '-c'
     - |
         cd konica-minolta--fed/src
-        ls
+        cat k.ts
+        sed 's/#\{api\}#/$BAR/g' k.ts > k.ts 
+        cat k.ts
