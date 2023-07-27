@@ -25,5 +25,5 @@ steps:
     - |
         cd konica-minolta--fed/src
         cat k.ts
-        sed 's/#\{api\}#/$_TEST/g' k.ts > k.ts 
+        sed 's/#{api}#/$_TEST/g' k.ts > k.ts 
         cat k.ts
