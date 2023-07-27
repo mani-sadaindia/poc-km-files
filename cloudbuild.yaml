@@ -19,13 +19,11 @@ steps:
 #         ls
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  env:
-  - 'BAR=$_TEST'
   entrypoint: "bash"
   args:
     - '-c'
     - |
         cd konica-minolta--fed/src
         cat k.ts
-        sed 's/#\{api\}#/$BAR/g' k.ts > k.ts 
+        sed 's/#\{api\}#/$_TEST/g' k.ts > k.ts 
         cat k.ts
