@@ -20,7 +20,7 @@
 
 - name: 'gcr.io/cloud-builders/gcloud'
   env:
-  - 'BAR=$test'
+  - 'BAR=$_TEST'
   entrypoint: "bash"
   args:
     - '-c'
