@@ -24,6 +24,4 @@ steps:
     - '-c'
     - |
         cd konica-minolta--fed/src
-        cat k.ts
         sed -ie 's/#{api}#/$_TEST/g' k.ts 
-        cat k.ts
